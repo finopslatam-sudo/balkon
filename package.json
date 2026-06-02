@@ -1,0 +1,35 @@
+{
+  "name": "balkon",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "format": "turbo run format",
+    "db:start": "docker-compose up -d postgres redis",
+    "db:stop": "docker-compose stop",
+    "db:migrate": "pnpm --filter backend run db:migrate",
+    "db:studio": "pnpm --filter backend run db:studio",
+    "db:seed": "pnpm --filter backend run db:seed"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3"
+  },
+  "packageManager": "pnpm@11.5.1",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@nestjs/core",
+      "unrs-resolver",
+      "bcrypt",
+      "argon2",
+      "@swc/core",
+      "esbuild",
+      "sharp"
+    ]
+  }
+}

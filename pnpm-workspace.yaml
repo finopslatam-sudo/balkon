@@ -1,0 +1,16 @@
+packages:
+  - "frontend"
+  - "backend"
+
+allowBuilds:
+  "@nestjs/core": true
+  "unrs-resolver": true
+  "bcrypt": true
+  "argon2": true
+  "@swc/core": true
+  "esbuild": true
+  "sharp": true
+  "@prisma/engines": true
+  "@scarf/scarf": true
+  "prisma": true
+  "msw": true
