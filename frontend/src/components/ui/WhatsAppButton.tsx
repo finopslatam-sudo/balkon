@@ -24,19 +24,12 @@ export function WhatsAppButton() {
     setVisible(y > 300);
   });
 
-  // Show message bubble 2s after the button appears
+  // Show message bubble 2s after the button appears — stays until dismissed
   useEffect(() => {
     if (!visible || dismissed) return;
     const t = setTimeout(() => setShowBubble(true), 2000);
     return () => clearTimeout(t);
   }, [visible, dismissed]);
-
-  // Auto-hide bubble after 6s
-  useEffect(() => {
-    if (!showBubble) return;
-    const t = setTimeout(() => setShowBubble(false), 6000);
-    return () => clearTimeout(t);
-  }, [showBubble]);
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
